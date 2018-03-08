@@ -1,4 +1,4 @@
-# Code Kata
+# Study/Homework Assigned By Tim
 
 ## Ruby Version
 
