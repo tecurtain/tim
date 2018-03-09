@@ -30,3 +30,25 @@ export function all(inputArray, predicateFn) {
     return false
   }
 }
+
+export function any(inputArray, predicateFn) {
+  var inputArrayLength = inputArray.length
+  var returnArray = []
+  var currentIndex = 0
+  while (currentIndex < inputArrayLength) {
+    var currentElement = inputArray[currentIndex]
+    if(predicateFn(currentElement)) {
+      returnArray.push(currentElement)
+    }
+    currentIndex++
+  }
+  if(returnArray.length > 0) {
+    return true
+  } else {
+    return false
+  }
+}
+
+export function find(inputArray, predicateFn) {
+  return inputArray
+}

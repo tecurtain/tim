@@ -1,5 +1,5 @@
 import chai from "chai"
-import { filter, all } from "../index"
+import { filter, all, any, find } from "../index"
 
 let expect = chai.expect
 
