@@ -50,5 +50,17 @@ export function any(inputArray, predicateFn) {
 }
 
 export function find(inputArray, predicateFn) {
-  return inputArray
+  var inputArrayLength = inputArray.length
+  var returnArray = []
+  var currentIndex = 0
+  while (currentIndex < inputArrayLength) {
+    var currentElement = inputArray[currentIndex]
+    if(predicateFn(currentElement)) {
+      returnArray.push(currentElement)
+      var bob = (!undefined) ? returnArray[0] : null
+    }
+    currentIndex++
+  }
+  console.log(bob)
+  return bob
 }
