@@ -14,9 +14,7 @@ export function filter(inputArray, filterFunc) {
 }
 
 export function all(inputArray, predicateFn) {
-  function inversePredicate(currentElement) {
-    return !predicateFn(currentElement)
-  }
+  var inversePredicate = (currentElement) => !predicateFn(currentElement)
   return !any(inputArray, inversePredicate)
 }
 
