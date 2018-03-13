@@ -19,16 +19,7 @@ export function all(inputArray, predicateFn) {
 }
 
 export function any(inputArray, predicateFn) {
-  var inputArrayLength = inputArray.length
-  var currentIndex = 0
-  while (currentIndex < inputArrayLength) {
-    var currentElement = inputArray[currentIndex]
-    if(predicateFn(currentElement)) {
-      return true
-    }
-    currentIndex++
-  }
-  return false
+  return (filter(inputArray, predicateFn).length !== 0)
 }
 
 export function find(inputArray, predicateFn) {
