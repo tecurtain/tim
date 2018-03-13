@@ -32,14 +32,10 @@ export function any(inputArray, predicateFn) {
 }
 
 export function find(inputArray, predicateFn) {
-  var inputArrayLength = inputArray.length
-  var currentIndex = 0
-  while (currentIndex < inputArrayLength) {
-    var currentElement = inputArray[currentIndex]
-    if(predicateFn(currentElement)) {
-      return currentElement
-    }
-    currentIndex++
+  var filterResult = filter(inputArray, predicateFn)
+  if(filterResult.length == 0) {
+    return null
+  } else {
+    return filterResult[0]
   }
-  return null
 }
