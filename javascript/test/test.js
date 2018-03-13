@@ -6,29 +6,25 @@ let expect = chai.expect
 describe("filter", () => {
   it("returns the exact array that was passed to the function if the predicate returns true every time", () => {
     var input = [1,2,3]
-    var predicate = function(x) { return true }
-    //var predicate = x => true
+    var predicate = x => true
     var expectedOutput = [1,2,3]
     expect(filter(input, predicate)).to.eql(expectedOutput)
   })
   it("returns an empty array", () => {
     var input = [1,2,3]
-    var predicate = function(x) { return false }
-    //var predicate = x => false
+    var predicate = x => false
     var expectedOutput = []
     expect(filter(input, predicate)).to.eql(expectedOutput)
   })
   it("returns array containing [true, true]", () => {
     var input = [true,false,true]
-    var predicate = function(x) { return x }
-    //var predicate = x => x
+    var predicate = x => x
     var expectedOutput = [true, true]
     expect(filter(input, predicate)).to.eql(expectedOutput)
   })
   it("returns array containing ['a','c']", () => {
     var input = ['a', 'b', 'c']
-    var predicate = function(x) { return x != 'b' }
-    // var predicate = x => x != 'b'
+    var predicate = x => x != 'b'
     var expectedOutput = ['a', 'c']
     expect(filter(input, predicate)).to.eql(expectedOutput)
   })
