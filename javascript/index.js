@@ -14,16 +14,10 @@ export function filter(inputArray, filterFunc) {
 }
 
 export function all(inputArray, predicateFn) {
-  var inputArrayLength = inputArray.length
-  var currentIndex = 0
-  while (currentIndex < inputArrayLength) {
-    var currentElement = inputArray[currentIndex]
-    if(!predicateFn(currentElement)) {
-      return false
-    }
-    currentIndex++
+  function inversePredicate(currentElement) {
+    return !predicateFn(currentElement)
   }
-  return true
+  return !any(inputArray, inversePredicate)
 }
 
 export function any(inputArray, predicateFn) {

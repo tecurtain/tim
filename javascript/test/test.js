@@ -31,15 +31,21 @@ describe("filter", () => {
 })
 
 describe("all", () => {
-  it("returns true if predicateFn returns true for all elements of inputArray funcation all(inputArray, predicateFn)", () => {
+  it("returns true if all elements in the array meet the predicate", () => {
     expect(all([1,2,3,4,5], (x) => x < 6)).to.eq(true)
+  })
+
+  it("returns false if any elements in the array fail the predicate", () => {
     expect(all([1,2,3,4,5], (x) => x < 5)).to.eq(false)
   })
 })
 
 describe("any", () => {
-  it('returns true if predicateFn returns true for any element of inputArray function any(inputArray, predicateFn)', () => {
+  it('returns true if any elements in the array meet the predicate', () => {
     expect(any([1,2,3,4,5], (x) => x > 3)).to.eq(true)
+  })
+
+  it('returns false if all elements in the array fail the predicate', () => {
     expect(any([1,2,3,4,5], (x) => x < 1)).to.eq(false)
   })
 })
