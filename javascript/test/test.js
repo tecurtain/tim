@@ -39,10 +39,16 @@ describe("all", () => {
     expect(all([1,2,3,4,5], (x) => x < 6)).to.eq(true)
     expect(all([1,2,3,4,5], (x) => x < 5)).to.eq(false)
   })
+})
+
+describe("any", () => {
   it('returns true if predicateFn returns true for any element of inputArray function any(inputArray, predicateFn)', () => {
     expect(any([1,2,3,4,5], (x) => x > 3)).to.eq(true)
     expect(any([1,2,3,4,5], (x) => x < 1)).to.eq(false)
   })
+})
+
+describe("find", () => {
   it('returns the first element of inputArray that predicateFn returns true for, or null if none exist function find(inputArray, predicateFn)', () => {
     expect(find([1,2,3,4,5], (x) => x > 3)).to.eq(4)
     expect(find([1,2,3,5,4], (x) => x < 1)).to.eq(null)

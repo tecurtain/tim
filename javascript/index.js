@@ -33,34 +33,26 @@ export function all(inputArray, predicateFn) {
 
 export function any(inputArray, predicateFn) {
   var inputArrayLength = inputArray.length
-  var returnArray = []
   var currentIndex = 0
   while (currentIndex < inputArrayLength) {
     var currentElement = inputArray[currentIndex]
     if(predicateFn(currentElement)) {
-      returnArray.push(currentElement)
+      return true
     }
     currentIndex++
   }
-  if(returnArray.length > 0) {
-    return true
-  } else {
-    return false
-  }
+  return false
 }
 
 export function find(inputArray, predicateFn) {
   var inputArrayLength = inputArray.length
-  var returnArray = []
   var currentIndex = 0
   while (currentIndex < inputArrayLength) {
     var currentElement = inputArray[currentIndex]
     if(predicateFn(currentElement)) {
-      returnArray.push(currentElement)
-      var bob = (!undefined) ? returnArray[0] : null
+      return currentElement
     }
     currentIndex++
   }
-  console.log(bob)
-  return bob
+  return null
 }
